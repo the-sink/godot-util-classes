@@ -10,6 +10,7 @@ func wait(duration: float):
 	timer.wait_time = duration
 	timer.start()
 	await timer.timeout
+	timer.queue_free()
 
-func wait_rand(min: float, max: float):
+func wait_rand(min: float, max:float):
 	await wait(randf_range(min, max))
